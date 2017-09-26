@@ -1,0 +1,259 @@
+
+array(6) {
+  ["headers"]=&gt;
+  object(Requests_Utility_CaseInsensitiveDictionary)#1034 (1) {
+    ["data":protected]=&gt;
+    array(17) {
+      ["x-powered-by"]=&gt;
+      string(10) "PHP/5.3.29"
+      ["cache-control"]=&gt;
+      string(37) "max-age=600, private, must-revalidate"
+      ["vary"]=&gt;
+      string(15) "Accept-Encoding"
+      ["content-encoding"]=&gt;
+      string(4) "gzip"
+      ["organisation"]=&gt;
+      string(24) "Webzin Infotech Pvt Ltd."
+      ["developer"]=&gt;
+      string(9) "Samir Das"
+      ["x-frame-options"]=&gt;
+      string(10) "SAMEORIGIN"
+      ["content-type"]=&gt;
+      string(31) "application/json; charset=UTF-8"
+      ["server"]=&gt;
+      string(33) "- Web acceleration by Mocha Cache"
+      ["x-cacheable"]=&gt;
+      string(3) "YES"
+      ["content-length"]=&gt;
+      string(2) "53"
+      ["accept-ranges"]=&gt;
+      string(5) "bytes"
+      ["date"]=&gt;
+      string(29) "Fri, 22 Sep 2017 13:29:08 GMT"
+      ["x-varnish"]=&gt;
+      string(10) "1806722280"
+      ["via"]=&gt;
+      string(11) "1.1 varnish"
+      ["age"]=&gt;
+      string(1) "0"
+      ["x-cache"]=&gt;
+      string(4) "MISS"
+    }
+  }
+  ["body"]=&gt;
+  string(33) "{"status":201,"response":[41,42]}"
+  ["response"]=&gt;
+  array(2) {
+    ["code"]=&gt;
+    int(200)
+    ["message"]=&gt;
+    string(2) "OK"
+  }
+  ["cookies"]=&gt;
+  array(0) {
+  }
+  ["filename"]=&gt;
+  NULL
+  ["http_response"]=&gt;
+  object(WP_HTTP_Requests_Response)#1031 (5) {
+    ["response":protected]=&gt;
+    object(Requests_Response)#1032 (10) {
+      ["body"]=&gt;
+      string(33) "{"status":201,"response":[41,42]}"
+      ["raw"]=&gt;
+      string(541) "HTTP/1.1 200 OK
+X-Powered-By: PHP/5.3.29
+Cache-Control: max-age=600, private, must-revalidate
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Organisation: Webzin Infotech Pvt Ltd.
+Developer: Samir Das
+X-Frame-Options: SAMEORIGIN
+Content-Type: application/json; charset=UTF-8
+Server:  - Web acceleration by Mocha Cache
+X-Cacheable: YES
+Content-Length: 53
+Accept-Ranges: bytes
+Date: Fri, 22 Sep 2017 13:29:08 GMT
+X-Varnish: 1806722280
+Via: 1.1 varnish
+Connection: close
+age: 0
+X-Cache: MISS
+
+{"status":201,"response":[41,42]}"
+      ["headers"]=&gt;
+      object(Requests_Response_Headers)#1033 (1) {
+        ["data":protected]=&gt;
+        array(17) {
+          ["x-powered-by"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(10) "PHP/5.3.29"
+          }
+          ["cache-control"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(37) "max-age=600, private, must-revalidate"
+          }
+          ["vary"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(15) "Accept-Encoding"
+          }
+          ["content-encoding"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(4) "gzip"
+          }
+          ["organisation"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(24) "Webzin Infotech Pvt Ltd."
+          }
+          ["developer"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(9) "Samir Das"
+          }
+          ["x-frame-options"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(10) "SAMEORIGIN"
+          }
+          ["content-type"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(31) "application/json; charset=UTF-8"
+          }
+          ["server"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(33) "- Web acceleration by Mocha Cache"
+          }
+          ["x-cacheable"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(3) "YES"
+          }
+          ["content-length"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(2) "53"
+          }
+          ["accept-ranges"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(5) "bytes"
+          }
+          ["date"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(29) "Fri, 22 Sep 2017 13:29:08 GMT"
+          }
+          ["x-varnish"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(10) "1806722280"
+          }
+          ["via"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(11) "1.1 varnish"
+          }
+          ["age"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(1) "0"
+          }
+          ["x-cache"]=&gt;
+          array(1) {
+            [0]=&gt;
+            string(4) "MISS"
+          }
+        }
+      }
+      ["status_code"]=&gt;
+      int(200)
+      ["protocol_version"]=&gt;
+      float(1.1)
+      ["success"]=&gt;
+      bool(true)
+      ["redirects"]=&gt;
+      int(0)
+      ["url"]=&gt;
+      object(Requests_IRI)#1030 (8) {
+        ["scheme":protected]=&gt;
+        string(4) "http"
+        ["iuserinfo":protected]=&gt;
+        NULL
+        ["ihost":protected]=&gt;
+        string(22) "www.wordpress-guru.net"
+        ["port":protected]=&gt;
+        NULL
+        ["ipath":protected]=&gt;
+        string(38) "/makaniroofing/gravityformsapi/entries"
+        ["iquery":protected]=&gt;
+        string(78) "api_key=fe608d0672&amp;signature=icwtzWm7PKyVmWYwssoiiypDCGw%3D&amp;expires=1506090546"
+        ["ifragment":protected]=&gt;
+        NULL
+        ["normalization":protected]=&gt;
+        array(5) {
+          ["acap"]=&gt;
+          array(1) {
+            ["port"]=&gt;
+            int(674)
+          }
+          ["dict"]=&gt;
+          array(1) {
+            ["port"]=&gt;
+            int(2628)
+          }
+          ["file"]=&gt;
+          array(1) {
+            ["ihost"]=&gt;
+            string(9) "localhost"
+          }
+          ["http"]=&gt;
+          array(1) {
+            ["port"]=&gt;
+            int(80)
+          }
+          ["https"]=&gt;
+          array(1) {
+            ["port"]=&gt;
+            int(443)
+          }
+        }
+      }
+      ["history"]=&gt;
+      array(0) {
+      }
+      ["cookies"]=&gt;
+      object(Requests_Cookie_Jar)#1029 (1) {
+        ["cookies":protected]=&gt;
+        array(0) {
+        }
+      }
+    }
+    ["filename":protected]=&gt;
+    NULL
+    ["data"]=&gt;
+    NULL
+    ["headers"]=&gt;
+    NULL
+    ["status"]=&gt;
+    NULL
+  }
+}
+Array
+(
+    [status] =&gt; 201
+    [response] =&gt; Array
+        (
+            [0] =&gt; 41
+            [1] =&gt; 42
+        )
+
+)
+The following entry ids were created:
