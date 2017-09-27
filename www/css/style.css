@@ -317,6 +317,11 @@ label.error {
  .footer i.grow {
     color: #398d6c !important;
 }
+
+.footer div.icon-div {
+    margin-top: 3px!important;
+	margin-bottom: 7px!important;
+}
  
  .container {
      padding-right: 15px;
@@ -422,7 +427,7 @@ label.error {
      width: 23%;
  }
  .navbar_home_link img {
-     width:70px;
+     width:170px;
  }
  .navbar_page_center {
      color: #ffffff;
@@ -1086,9 +1091,10 @@ label.error {
 	 line-height:1;
      text-transform:capitalize;
      padding: 5px 6px 5px 6px;
+	 margin-right:5px;
  }
  .simplefilter li {
-     background-color: #fbb030;
+     background-color: #398d6c;
  }
  .simplefilter li.active {
      background-color: #212121;
@@ -1106,6 +1112,7 @@ label.error {
 	margin-bottom:10px;
 	margin-top:0;
      padding-left: 0;
+	 margin-left: 20px !important;
  }
  
   /*========================================== 13.SHUFFLE END ===========================================*/
@@ -1546,3 +1553,8 @@ label.error {
  }
  
  /*========================================== 17.MEDIA QUERIES END ===========================================*/
+ 
+ 
+ /*extra style*/
+ 
+ .np {padding:0 !important;}

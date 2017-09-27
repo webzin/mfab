@@ -3540,24 +3540,23 @@ html.with-statusbar-overlay .popup.tablet-fullscreen {
 }
 .preloader-indicator-overlay {
   visibility: visible;
-  opacity: 0;
-  background: none;
+  opacity: 1;
+  background: #f3f3f3;
 }
 .preloader-indicator-modal {
   position: absolute;
   left: 50%;
   top: 50%;
   padding: 8px;
-  margin-left: -25px;
-  margin-top: -25px;
-  background: rgba(0, 0, 0, 0.8);
+  margin-left: -40px;
+  margin-top: -40px;
+ /* background: rgba(0, 0, 0, 0.8);*/
   z-index: 11000;
   border-radius: 5px;
 }
 .preloader-indicator-modal .preloader {
   display: block;
-  width: 34px;
-  height: 34px;
+  
 }
 .picker-modal {
   position: absolute;
@@ -4063,25 +4062,22 @@ html.with-statusbar-overlay body .panel {
 /* === Preloader === */
 .preloader {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  -webkit-transform-origin: 50%;
-  transform-origin: 50%;
-  -webkit-animation: preloader-spin 1s step-end infinite;
-  animation: preloader-spin 1s step-end infinite;
+  width: 70px;
+  height: 70px;
+  
 }
 .preloader:after {
   display: block;
   content: "";
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><line id='l' x1='60' x2='60' y1='7' y2='27' stroke='%236c6c6c' stroke-width='11' stroke-linecap='round'/></defs><g><use xlink:href='%23l' opacity='.27'/><use xlink:href='%23l' opacity='.27' transform='rotate(30 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(60 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(90 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(120 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(150 60,60)'/><use xlink:href='%23l' opacity='.37' transform='rotate(180 60,60)'/><use xlink:href='%23l' opacity='.46' transform='rotate(210 60,60)'/><use xlink:href='%23l' opacity='.56' transform='rotate(240 60,60)'/><use xlink:href='%23l' opacity='.66' transform='rotate(270 60,60)'/><use xlink:href='%23l' opacity='.75' transform='rotate(300 60,60)'/><use xlink:href='%23l' opacity='.85' transform='rotate(330 60,60)'/></g></svg>");
+  background-image: url('../images/load.svg');
   background-position: 50%;
   background-size: 100%;
   background-repeat: no-repeat;
 }
 .preloader-white:after {
-  background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><line id='l' x1='60' x2='60' y1='7' y2='27' stroke='%23fff' stroke-width='11' stroke-linecap='round'/></defs><g><use xlink:href='%23l' opacity='.27'/><use xlink:href='%23l' opacity='.27' transform='rotate(30 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(60 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(90 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(120 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(150 60,60)'/><use xlink:href='%23l' opacity='.37' transform='rotate(180 60,60)'/><use xlink:href='%23l' opacity='.46' transform='rotate(210 60,60)'/><use xlink:href='%23l' opacity='.56' transform='rotate(240 60,60)'/><use xlink:href='%23l' opacity='.66' transform='rotate(270 60,60)'/><use xlink:href='%23l' opacity='.75' transform='rotate(300 60,60)'/><use xlink:href='%23l' opacity='.85' transform='rotate(330 60,60)'/></g></svg>");
+  background-image: url(../images/load.svg);
 }
 @-webkit-keyframes preloader-spin {
   0% {
