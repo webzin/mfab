@@ -67,20 +67,130 @@ $$(document).on('page:init', function(e) {
 
 })
 
+//Video Page
+	myApp.onPageInit('manual', function(page) {
+		//alert('das');
+			var mandata = {
+    		"page": "manual"
+			};
+	$.getJSON('http://wordpress-guru.net/makaniroofing/app.php', mandata, function(data){ 
+	var allcat =$("<li class='active' data-filter='all'>All</li>");
+		$(".simplefilter").append(allcat);
+		
+		$.each(data, function(idx, obj){
+				var box = $("<div class='col-100 tablet-100'><h5>"+obj.name+"</h5><iframe src='https://docs.google.com/gview?url="+obj.url+"&amp;embedded=true' style='width: 100%; height: 500px;' frameborder='0'></iframe>");
+				$("#manudata").append(box);
+		 });
+	});
+		
+	});
+	
+
 /*Gallery shuffle*/
-myApp.onPageInit('gallery', function(page) {
-    $(".swipebox").swipebox();
+myApp.onPageInit('video', function(page) {							   
+    
+	
+	var viddata = {
+    "page": "vidfilter"
+};
+	$.getJSON('http://wordpress-guru.net/makaniroofing/app.php', viddata, function(data){ 
+	var allcat =$("<li class='active' data-filter='all'>All</li>");
+		$(".simplefilter").append(allcat);
+		
+		$.each(data, function(idx, obj){
+				var catname=$("<li data-filter='"+obj.categoryid+"'>"+obj.category+"</li>");
+				$(".simplefilter").append(catname);
+		 });
+	});
+	var sentdata = {
+    "page": "video"
+};
+	$.getJSON('http://wordpress-guru.net/makaniroofing/app.php', sentdata, function(data){ 
+		//alert(data);
+		//console.log(data);	
+		
+		
+	var groupedData = _.groupBy(data, function(d){return d.categoryid});
+var k=1;
+for(i=1; i <= Object.keys(groupedData).length; i++){
+	/*console.log('i:'+i);
+	console.log(Object.keys(groupedData).length);*/
+	
+	for(j=0; j < groupedData[i].length;j++){
+		/*console.log('j:'+j);*/
+		if(groupedData[i][j].type=="wistia"){
+			if(k==1){
+			var box = $("<div class='col-50 tablet-50'><h2>"+groupedData[i][j].category+"</h2><div class='video-frame'><iframe src='http://fast.wistia.net/embed/iframe/"+groupedData[i][j].url+"?videoFoam=true' allowtransparency='true' frameborder='0' scrolling='no' class='wistia_embed' name='wistia_embed' width='640' height='360'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+groupedData[i][j].name+"..</div></div></div>");
+				$("#vidrow").append(box);
+			}
+			else{
+				var box = $("<div class='col-50 tablet-50'><div class='video-frame'><iframe src='http://fast.wistia.net/embed/iframe/"+groupedData[i][j].url+"?videoFoam=true' allowtransparency='true' frameborder='0' scrolling='no' class='wistia_embed' name='wistia_embed' width='640' height='360'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+groupedData[i][j].name+"..</div></div></div>");
+				$("#vidrow").append(box);
+			}
+			}
+			else{
+				if(k==1){
+					var box = $("<div class='col-50 tablet-50'><h2>"+groupedData[i][j].category+"</h2><div class='video-frame'><iframe class='embed-responsive-item video' src='http://youtube.com/embed/"+groupedData[i][j].url+"?version=3&loop=1'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+groupedData[i][j].name+"..</div></div></div>");
+				$('#vidrow').append(box);
+				}
+				else{
+				var box = $("<div class='col-50 tablet-50'><div class='video-frame'><iframe class='embed-responsive-item video' src='http://youtube.com/embed/"+groupedData[i][j].url+"?version=3&loop=1'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+groupedData[i][j].name+"..</div></div></div>");
+				$('#vidrow').append(box);
+				}
+			} 
+		console.log(groupedData[i][j].type);
+	/*for (var key in groupedData[i][j]) {
+		if (groupedData[i][j].hasOwnProperty(key)) {
+        console.log(key + " -> " + groupedData[i][j][key]);
+      }*/
+	  k++;
+	}
+	k=1;
+}
+/*console.log(groupedData);
+for(i=0; i <= groupedData[k].length; i++){
+	console.log(groupedData[k].length);
+    $.each(groupedData[k], function(idx, obj){
+		console.log(i);
+		console.log(groupedData[k]);	
+			 var str = obj.name
+             var res = str.substr(0,15);
+
+
+		if(obj.type=="wistia"){
+			var box = $("<div class='col-50 tablet-50'><div class='video-frame'><iframe src='http://fast.wistia.net/embed/iframe/"+obj.url+"?videoFoam=true' allowtransparency='true' frameborder='0' scrolling='no' class='wistia_embed' name='wistia_embed' width='640' height='360'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+res+"..</div></div></div>");
+				$("#vidrow").append(box);
+			}
+			else{
+				var box = $("<div class='col-50 tablet-50'><div class='video-frame'><iframe class='embed-responsive-item video' src='http://youtube.com/embed/"+obj.url+"?version=3&loop=1'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+res+"..</div></div></div>");
+				$('#vidrow').append(box);
+			} 
+	//console.log(obj.name);
+        $.each(obj, function(key, value){
+			
+            //console.log(key + ": " + value);
+        });
+		k=k+1;
+    });
+	
+	//console.log(k);
+	alert(i);
+	}//for*/
+});
+/*$(document).ready(function(e) {*/
+$('body').on('click', '.simplefilter li', function (){
+        //alert('click!');
+		$('.simplefilter li').removeClass('active');
+            $(this).addClass('active');
+    });
+$(".swipebox").swipebox();
     var filtrContainer = $('.filtr-container');
     var simplefilter = $('.simplefilter li');
-    if (simplefilter.length) {
-        simplefilter.on('click', function() {
-            simplefilter.removeClass('active');
-            $(this).addClass('active');
-        });
-    }
+	
 
     if (filtrContainer.length) {
         console.log(page);
+		
         filtrContainer.css('visibility', 'hidden');
         setTimeout(function() {
             $(".filtr-container").filterizr();
@@ -88,7 +198,11 @@ myApp.onPageInit('gallery', function(page) {
         }, 2500);
 
     }
+/*});*/
 });
+myApp.onPageInit('manual', function(page) {
+});
+						
 
 
 //QUOTE FORM VALIDATION	
@@ -106,7 +220,7 @@ $('#ua').val(navigator.userAgent);
 					submitHandler: function(form){
 						$.ajax({
 							type: "POST",
-							url:"http://www.wordpress-guru.net/makaniroofing/gf.php",
+							url:"http://www.wordpress-guru.net/makaniroofing/app.php?page=gf",
 							dataType: 'json',
 							data: $(form).serialize(),
 							success: function(data) {	
@@ -134,32 +248,28 @@ $('#ua').val(navigator.userAgent);
 				});
 			});
 		}
-	});
-
-//Video Page
-	myApp.onPageInit('video', function(page) {
-		//alert('das');
-		$.getJSON('video.json', function(data){ 
-		//alert(data);
-    $.each(data, function(idx, obj){
-			 var str = obj.name
-             var res = str.substr(0,15);
-		if(obj.type=="wistia"){
-				$("#vidrow").append("<div class='col-50 tablet-50 card'><div class='video-frame'><iframe src='http://fast.wistia.net/embed/iframe/"+obj.url+"?videoFoam=true' allowtransparency='true' frameborder='0' scrolling='no' class='wistia_embed' name='wistia_embed' width='640' height='360'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+res+"..</div></div></div>");
-			}
-			else{
-				$('#vidrow').append("<div class='col-50 tablet-50 card'><div class='video-frame'><iframe class='embed-responsive-item video' src='http://youtube.com/embed/"+obj.url+"?version=3&loop=1'></iframe></div><div class='card-content'><div class='icon-title color-black'>"+res+"..</div></div></div>");
-			} 
-	console.log(obj.name);
-        $.each(obj, function(key, value){
-			
-            console.log(key + ": " + value);
-        });
-    });
-});
-	});
-	
 		
+//for select onchange
+$("#pi,#pp").hide();	
+$("select#mt").on('change', function() {						   
+      if ( this.value == 'Piranha Ironworkers')
+      {
+        $("#pi").show();
+      }
+	  else
+	  {
+		  $("#pi").hide();	
+	  }
+	  if ( this.value == 'Piranha Press Brakes')
+      {
+        $("#pp").show();
+      }
+	  else
+	  {
+		  $("#pp").hide();	
+	  }
+    });				
+	});
 	$('select').click(function(){
   if (/Android/.test(navigator.userAgent)){
     $(this).blur();
