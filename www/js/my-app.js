@@ -78,7 +78,7 @@ $$(document).on('page:init', function(e) {
 		$(".simplefilter").append(allcat);
 		
 		$.each(data, function(idx, obj){
-				var box = $("<div class='col-100 tablet-100'><h5>"+obj.name+"</h5><iframe src='https://docs.google.com/gview?url="+obj.url+"&amp;embedded=true' style='width: 100%; height: 500px;' frameborder='0'></iframe>");
+				var box = $("<div class='col-100 tablet-100'><h5>"+obj.name+"</h5><a href="+obj.url+"><img src='images/icons/manual.png'></a>");
 				$("#manudata").append(box);
 		 });
 	});
