@@ -78,7 +78,7 @@ $$(document).on('page:init', function(e) {
 		$(".simplefilter").append(allcat);
 		
 		$.each(data, function(idx, obj){
-				var box = $("<div class='col-100 tablet-100'><h5>"+obj.name+"</h5><a href="+obj.url+"><img src='images/icons/manual.png'></a>");
+				var box = $("<div class='col-100 tablet-100 text-center'><h5>"+obj.name+"</h5><a class='external' href="+obj.url+"><img src='images/icons/manual.png'></a>");
 				$("#manudata").append(box);
 		 });
 	});
@@ -250,7 +250,7 @@ $('#ua').val(navigator.userAgent);
 		}
 		
 //for select onchange
-$("#pi,#pp").hide();	
+$("#pi,#pp,#ps,#ppt,#ppp,#ppc").hide();	
 $("select#mt").on('change', function() {						   
       if ( this.value == 'Piranha Ironworkers')
       {
@@ -268,6 +268,39 @@ $("select#mt").on('change', function() {
 	  {
 		  $("#pp").hide();	
 	  }
+	  if ( this.value == 'Piranha Shears')
+      {
+        $("#ps").show();
+      }
+	  else
+	  {
+		  $("#ps").hide();	
+	  }
+	  if ( this.value == 'Piranha Plasma Tables')
+      {
+        $("#ppt").show();
+      }
+	  else
+	  {
+		  $("#ppt").hide();	
+	  }
+	  if ( this.value == 'Piranha Portable Presses')
+      {
+        $("#ppp").show();
+      }
+	  else
+	  {
+		  $("#ppp").hide();	
+	  }
+	  if ( this.value == 'Whitney Punch Plasma Combination')
+      {
+        $("#ppc").show();
+      }
+	  else
+	  {
+		  $("#ppc").hide();	
+	  }
+	  
     });				
 	});
 	$('select').click(function(){
