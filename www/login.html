@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Megafab | Request a Quote</title>
+<title>Megafab | Login</title>
 </head>
 <!-- Contact PAGE -->
 
 <div class="pages">
-  <div data-page="quote" class="page no-toolbar no-navbar page-on-center" style="">
+  <div data-page="login" class="page no-toolbar no-navbar page-on-center" style="">
     <div class="page-content">
       <div class="navbarpages">
         <div class="navbar_home_link"><a href="index.html"><img src="images/ftr_logo.png" alt=""></a></div>
         <div class="menu-icon"><a href="#" class="open-panel"><img src="images/menu.png" alt=""></a></div>
       </div>
       <div id="pages_maincontent" class="section-bg-1">
-        <div class="content-block">
+        <div class="content-block" id="nologin">
           <div class="title-div text-center">
             <h2 class="page_subtitle">Dealer Login</h2>
           </div>
           <div class="row container clearfix">
-            <form class="contact">
+            <form class="contact" name="login-form" id="login-form">
               <div class="col-100 tablet-100 contact-div">
-                <input class="col-80 tablet-80 clearfix" type="text" value="" placeholder="Username">
+                <input required class="col-80 tablet-80 clearfix" type="text" name="username" value="" placeholder="Username">
               </div>
               <div class="col-100 tablet-100 contact-div">
-                <input class="col-80 tablet-80 clearfix" type="text" value="" placeholder="Password">
+                <input required class="col-80 tablet-80 clearfix" type="text" name="password" value="" placeholder="Password">
               </div>
-              <button type="submit" class="button" name="subscribe">Login</button>
+              <button type="submit" class="button" name="loginsubmit">Login</button>
             </form>
+            <div id="messageDiv">
+              <div id="sucessMessage"> </div>
+              <div id="failMessage"> </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-block" id="loggedin" style="display:none;">
+        <div class="title-div text-center">
+            <h2 class="page_subtitle" id="dealerfname"></h2>
+            <h2 class="page_subtitle" id="dealeremail"></h2>
+            <h2 class="page_subtitle" id="loglink"><a class="external" href="javascript:;" id="logout">Logout</a></h2>
           </div>
         </div>
         <footer class="footer">
