@@ -302,7 +302,6 @@ $("select#mt").on('change', function() {
 	//LOGIN FORM VALIDATION	
 	myApp.onPageInit('login', function(page) {
 		$('#logout').on('click',function(e){
-			/*e.preventDefault();*/
 			localStorage.removeItem('user_data');
 			location.reload();
 		});
