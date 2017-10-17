@@ -89,7 +89,7 @@ $$(document).on('page:init', function(e) {
 	myApp.onPageInit('video', function(page) {							   
 		
 		
-		var viddata = {
+		/*var viddata = {
 		"page": "vidfilter"
 	};
 		$.getJSON('http://wordpress-guru.net/makaniroofing/app.php', viddata, function(data){ 
@@ -100,7 +100,7 @@ $$(document).on('page:init', function(e) {
 					var catname=$("<li data-filter='"+obj.categoryid+"'>"+obj.category+"</li>");
 					$(".simplefilter").append(catname);
 			 });
-		});
+		});*/
 		var sentdata = {
 		"page": "video"
 	};
@@ -202,6 +202,12 @@ $$(document).on('page:init', function(e) {
 
 	//QUOTE FORM VALIDATION	
 	myApp.onPageInit('quote', function(page) {	
+	var das = JSON.parse( localStorage.getItem('user_data'));
+	console.log('https://secure.gravatar.com/avatar/abbbaa82c614113aee480c0599edc2bc'+hex_md5(das.user_email).toLowerCase().trim()+'/?s=100');
+	if(das.status){
+			$('#conname').val(das.user_firstname+' '+das.user_lastname);
+			$('#conemail').val(das.user_email);
+		}
 	$.getJSON("https://api.ipify.org/?format=json", function(e) {
     console.log(e.ip);
 	$('#ip').val(e.ip);
@@ -305,9 +311,11 @@ $("select#mt").on('change', function() {
 			localStorage.removeItem('user_data');
 			location.reload();
 		});
+		
 		if (localStorage.getItem("user_data")) {
 		var sam = JSON.parse( localStorage.getItem('user_data'));
 		if(sam.status){
+			$('#loggedin').css('background','url(https://secure.gravatar.com/avatar/abbbaa82c614113aee480c0599edc2bc'+hex_md5(sam.user_email).toLowerCase().trim()+'/?s=200) center no-repeat')
 			$('#dealerfname').html('Name: '+sam.user_firstname+' '+sam.user_lastname);
 			$('#dealeremail').html('Email: '+sam.user_email);
 			$('#nologin').css('display','none');
